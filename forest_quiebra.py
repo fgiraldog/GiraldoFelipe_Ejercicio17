@@ -54,7 +54,6 @@ for i, n_tree in enumerate(n_trees):
 # plt.scatter(n_trees,f1_test, label = 'test')
 # plt.legend()
 # plt.show()
-
 best_M = n_trees[np.argmax(f1_test)]
 clf_best = sklearn.ensemble.RandomForestClassifier(n_estimators=best_M, max_features='sqrt')
 clf_best.fit(x_train,y_train)
@@ -66,4 +65,4 @@ a.nlargest().plot(kind='barh')
 plt.xlabel('Average Feature Importance')
 plt.title('{:.0f} Trees, F1 Score = {:.3f}'.format(best_M,f1_score))
 plt.tight_layout()
-plt.show()
+plt.savefig('features.pngS')
