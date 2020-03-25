@@ -35,11 +35,11 @@ atributes = data[:,:-1]
 target = data[:,-1]
 
 
-x_train, x_testval, y_train, y_testval = sklearn.model_selection.train_test_split(atributes, target, test_size=0.5)
+x_train, x_testval, y_train, y_testval = sklearn.model_selection.train_test_split(atributes, target, train_size=0.5)
 
-x_test, x_val, y_test, y_val = sklearn.model_selection.train_test_split(x_testval, y_testval, test_size=0.6)
+x_test, x_val, y_test, y_val = sklearn.model_selection.train_test_split(x_testval, y_testval, train_size=0.6)
 
-n_trees = np.arange(1,200,25)
+n_trees = np.arange(1,20,1)
 f1_train = []
 f1_test = []
 
