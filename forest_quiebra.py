@@ -60,9 +60,10 @@ clf_best.fit(x_train,y_train)
 importances = clf_best.feature_importances_
 f1_score = sklearn.metrics.f1_score(y_val, clf.predict(x_val))
 
+plt.figure(figsize = (10,8))
 a = pd.Series(importances, index=atributes_name)
 a.nlargest().plot(kind='barh')
-plt.xlabel('Average Feature Importance')
-plt.title('{:.0f} Trees, F1 Score = {:.3f}'.format(best_M,f1_score))
+plt.xlabel('Feature Importance')
+plt.title('F1 Score = {:.3f} , {:.0f} Trees'.format(f1_score,best_M))
 plt.tight_layout()
 plt.savefig('features.png')
